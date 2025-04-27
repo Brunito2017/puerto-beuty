@@ -1,0 +1,70 @@
+---
+// You can add props here if needed later
+---
+
+<header class="fixed w-full bg-white/80 backdrop-blur-md py-4 z-10 border-b border-pink-100/30">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    
+    <div class="flex items-center">
+      <a href="/" class="font-serif text-2xl tracking-wide text-pink-900">
+        <span class="font-light">Puerto</span><span class="font-medium">Beauty</span>
+      </a>
+    </div>
+
+    <!-- Elegant navigation for desktop -->
+    <nav class="hidden md:block">
+      <ul class="flex space-x-10">
+        <li><a href="/" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Inicio</a></li>
+        <li><a href="/services" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Servicios</a></li>
+        <li><a href="/about" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Nosotros</a></li>
+        <li><a href="/contact" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide relative group">
+          Contacto
+          <span class="absolute -bottom-1 left-0 w-0 h-px bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+        </a></li>
+      </ul>
+    </nav>
+
+    <!-- Book appointment button -->
+    <div class="hidden md:block">
+      <a href="/book" class="px-5 py-2 border border-pink-200 text-pink-700 hover:bg-pink-50 rounded-full text-sm font-light transition-colors duration-300">
+        Reservar Cita
+      </a>
+    </div>
+
+    <!-- Refined mobile menu button -->
+    <button class="md:hidden text-pink-800" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile menu (hidden by default) -->
+  <div class="mobile-menu hidden bg-white/95 absolute w-full left-0 border-b border-pink-100/30" id="mobile-menu">
+    <div class="container mx-auto px-6 py-4">
+      <ul class="space-y-4">
+        <li><a href="/" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Inicio</a></li>
+        <li><a href="/services" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Servicios</a></li>
+        <li><a href="/about" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Nosotros</a></li>
+        <li><a href="/contact" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Contacto</a></li>
+        <li class="pt-2">
+          <a href="/book" class="block text-center py-3 bg-pink-50 text-pink-700 rounded-full text-sm font-light">
+            Reservar Cita
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Simple toggle for mobile menu
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('button[aria-label="Menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  });
+</script>
