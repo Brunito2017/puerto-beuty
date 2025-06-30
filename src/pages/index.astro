@@ -1,19 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/BaseLayout.astro"
 import Header from "../components/Header.astro"
+import TripleGallery from "../components/TripleGallery.astro"
+import { homeGalleryImages } from "../data/HomeGalleryImages.ts"
 ---
 
 <Layout>
     <Header />
     <main class="pt-24 px-4 md:px-8 max-w-max mx-auto">
-		<div class="flex items-baseline gap-[25rem] mb-6" >
-			<h1 class="text-7xl font-bold text-neutral-900">Puerto Beauty</h1>
-			<h2 class="text-5xl font-light text-neutral-500">Salón & Spa</h2>
-		</div>
-		<div class="prose">
-			
+        <div class="flex items-baseline gap-[25rem] mb-6" >
+            <h1 class="text-7xl font-bold text-neutral-900">Puerto Beauty</h1>
+            <h2 class="text-5xl font-light text-neutral-500">Salón & Spa</h2>
+        </div>
+        <div class="prose">
+            
 
-		</div>
+        </div>
 
+        <TripleGallery images={homeGalleryImages} />
     </main>
 </Layout>

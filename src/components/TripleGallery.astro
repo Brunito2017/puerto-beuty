@@ -1,0 +1,29 @@
+---
+
+
+import type { Image } from '../types/index.ts';
+
+export interface Props {
+  images: Image[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-8 max-w-screen-lg mx-auto">
+    {images.map((image) => (
+        <div class="mb-8 relative group overflow-hidden rounded-xl shadow-lg shadow-rose-100/50 border border-rose-50/50">
+            <img
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-64 object-cover transition-all duration-300 group-hover:blur-sm group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-rose-100/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="text-center text-zinc-700 px-4">
+                    <h3 class="text-xl font-bold mb-2">{image.title}</h3>
+                </div>
+            </div>
+        </div>
+    ))}
+</div>
+</div>
