@@ -1,6 +1,8 @@
 ---
 // Importa los estilos globales para que Tailwind funcione
 import '../styles/global.css';
+import Footer from "../components/Footer.astro";
+
 ---
 
 <!doctype html>
@@ -12,8 +14,10 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Puerto Beauty</title>
 	</head>
-	<body>
-		<slot />
+
+<body>
+	<slot />
+	<Footer />
 	</body>
 </html>
 

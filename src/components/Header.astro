@@ -3,16 +3,9 @@
 ---
 
 <header class="fixed w-full bg-white/80 backdrop-blur-md py-4 z-10 border-b border-pink-100/30">
-  <div class="container mx-auto px-6 flex justify-between items-center">
-    
-    <div class="flex items-center">
-      <a href="/" class="font-serif text-2xl tracking-wide text-pink-900">
-        <span class="font-light">Puerto</span><span class="font-medium">Beauty</span>
-      </a>
-    </div>
-
+  <div class="container mx-auto px-6 flex justify-between items-center relative">
     <!-- Elegant navigation for desktop -->
-    <nav class="hidden md:block">
+    <nav class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2">
       <ul class="flex space-x-10">
         <li><a href="/" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Inicio</a></li>
         <li><a href="/services" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Servicios</a></li>
@@ -24,15 +17,22 @@
       </ul>
     </nav>
 
+    <!-- Centered logo/title -->
+    <div class="flex-1 flex justify-center items-center">
+      <a href="/" class="font-serif text-2xl tracking-wide text-pink-900">
+        <span class="font-light">Puerto</span><span class="font-medium">Beauty</span>
+      </a>
+    </div>
+
     <!-- Book appointment button -->
-    <div class="hidden md:block">
-      <a href="/book" class="px-5 py-2 border border-pink-200 text-pink-700 hover:bg-pink-50 rounded-full text-sm font-light transition-colors duration-300">
+    <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
+      <a href="/book" class="px-5 py-2 border border-pink-200 text-pink-700 bg-white hover:bg-pink-50 rounded-full text-sm font-light transition-all duration-300 hover:scale-110 hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-200 animate-pulse">
         Reservar Cita
       </a>
     </div>
 
     <!-- Refined mobile menu button -->
-    <button class="md:hidden text-pink-800" aria-label="Menu">
+    <button class="md:hidden text-pink-800 absolute right-0 top-1/2 -translate-y-1/2" aria-label="Menu">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
