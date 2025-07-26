@@ -6,11 +6,13 @@ export interface Props {
   description: string;
   features?: string[];
   reverse?: boolean;
+  animation? : string;
+  delay?: string; // Optional delay for animation
 }
 
-const { imageSrc, imageAlt, title, description, features, reverse = false } = Astro.props;
+const { imageSrc, imageAlt, title, description, features, reverse = false, animation, delay } = Astro.props;
 ---
-<div class={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 sm:gap-8 items-center mb-10 sm:mb-14 md:mb-16`}>
+<div data-aos={animation} data-aos-duration={delay} class={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 sm:gap-8 items-center mb-10 sm:mb-14 md:mb-16`}>
   <!-- Imagen -->
   <div class="w-full md:w-1/2">
     <div class="relative group overflow-hidden rounded-2xl shadow-xl shadow-rose-200/30">

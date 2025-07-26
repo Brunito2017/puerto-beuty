@@ -1,31 +1,39 @@
 ---
-// Importa los estilos globales para que Tailwind funcione
-import '../styles/global.css';
+import "aos/dist/aos.css";
+import "../styles/global.css";
 import Footer from "../components/Footer.astro";
-
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Puerto Beauty</title>
+
+		<title>Puerto Beauty | Belleza y estética en Puerto Montt</title>
+		<meta
+			name="description"
+			content="Puerto Beauty en Puerto Montt, Región de Los Lagos, sur de Chile, ofrece servicios de belleza: limpieza facial, depilación, masajes y tratamientos estéticos personalizados."
+		/>
+		<meta
+			name="keywords"
+			content="belleza Puerto Montt, extensión de pestañas Puerto Montt, diseño de cejas Puerto Montt, uñas acrílicas Puerto Montt, manicure y pedicure Puerto Montt, salón de belleza en Puerto Montt, depilación en Puerto Montt, tratamientos faciales Puerto Montt, lifting de pestañas Puerto Montt, cuidado de cejas y pestañas Puerto Montt"
+		/>
+
+		<meta name="author" content="Puerto Beauty" />
+		<meta name="publisher" content="Puerto Beauty" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://puertobeauty.com/" />
 	</head>
 
-<body>
-	<slot />
-	<Footer />
+	<body>
+		<slot />
+		<Footer />
+		<script>
+			import AOS from "aos";
+			AOS.init();
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

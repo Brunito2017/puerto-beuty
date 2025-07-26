@@ -16,6 +16,8 @@ export interface ImageWithInfoProps {
   description: string;
   features?: string[];
   reverse?: boolean;
+  animation?: string; 
+  delay?: string; 
 }
 
 export interface TextSectionData {

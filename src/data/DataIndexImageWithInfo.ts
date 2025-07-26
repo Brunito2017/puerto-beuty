@@ -7,21 +7,27 @@ export const homeImageWithInfoData: ImageWithInfoProps[] = [
     imageAlt: "Lifting de pestañas en Puerto Beauty",
     title: "Lifting de Pestañas",
     description: "Realza tu mirada con nuestro servicio de lifting de pestañas. Resultados naturales, duraderos y sin mantenimiento diario.",
-    reverse: false
+    reverse: false,
+    animation: "fade-left",
+    delay: "1000"
   },
   {
     imageSrc: "https://tse1.mm.bing.net/th/id/OIP.gtkTrDtrIIW1wws2e6T4WQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
     imageAlt: "Diseño de cejas en Puerto Beauty",
     title: "Diseño de Cejas",
     description: "Logra unas cejas perfectas con nuestro servicio profesional de diseño y perfilado. Realzamos tu belleza natural con precisión y cuidado.",
-    reverse: true 
+    reverse: true,
+    animation: "fade-right",
+    delay: "1000"
   },
   {
     imageSrc: "https://d3g9jhyjo6tiod.cloudfront.net/revistaamigapl/wp-content/uploads/2021/03/250431.jpg",
     imageAlt: "Manicura y uñas en Puerto Beauty",
     title: "Manicura y Uñas",
     description: "Luce unas manos impecables con nuestros servicios de manicura, esmaltado y cuidado de uñas. Calidad, higiene y los mejores productos para ti.",
-    reverse: false
+    reverse: false,
+    animation: "fade-left",
+    delay: "1000"
   }
 ];
 
