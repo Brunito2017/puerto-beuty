@@ -16,8 +16,8 @@ export interface ImageWithInfoProps {
   description: string;
   features?: string[];
   reverse?: boolean;
-  animation?: string; 
-  delay?: string; 
+  animation?: string;
+  delay?: string;
 }
 
 export interface TextSectionData {
@@ -28,4 +28,12 @@ export interface TextSectionData {
   size?: 'sm' | 'md' | 'lg';
   background?: 'transparent' | 'light' | 'dark';
   className?: string;
+}
+
+export interface LocationProps {
+  title: string;
+  businessName: string;
+  address: string;
+  phone: string;
+  googleMapsUrl: string;
 }

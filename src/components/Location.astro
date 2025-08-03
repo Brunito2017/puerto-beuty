@@ -1,0 +1,56 @@
+---
+import type { LocationProps } from '../types';
+
+const { title, businessName, address, phone, googleMapsUrl } = Astro.props as LocationProps;
+---
+
+<section class="relative bg-gradient-to-br from-pink-50 via-white to-pink-100 rounded-3xl shadow-2xl p-4 sm:p-8 max-w-full sm:max-w-2xl mx-auto my-8 sm:my-12 border border-pink-200 overflow-hidden">
+  <div class="absolute -top-10 -right-10 w-32 h-32 sm:w-40 sm:h-40 bg-pink-200 opacity-30 rounded-full blur-2xl pointer-events-none"></div>
+  <div class="absolute -bottom-10 -left-10 w-24 h-24 sm:w-32 sm:h-32 bg-pink-100 opacity-20 rounded-full blur-2xl pointer-events-none"></div>
+  <h2 class="text-2xl sm:text-3xl font-extrabold text-pink-700 mb-4 text-center drop-shadow">{title}</h2>
+  <div class="mb-6 text-center">
+    <p class="text-lg sm:text-xl font-bold text-pink-800">{businessName}</p>
+    <p class="text-gray-700 text-base">{address}</p>
+    <p class="text-gray-700 text-base">
+      <span class="font-medium">Tel:</span>
+      <a href={`tel:${phone}`} class="text-pink-600 hover:underline ml-1">{phone}</a>
+    </p>
+  </div>
+  <a href={googleMapsUrl} target="_blank" rel="noopener" class="block group">
+    <div class="w-full h-56 sm:h-72 rounded-2xl overflow-hidden border-4 border-pink-100 shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:border-pink-300">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border:0"
+        src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+        allowfullscreen
+        aria-label="Mapa de ubicación"
+        class="w-full h-full"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <span class="block mt-4 text-pink-700 font-semibold group-hover:underline text-center transition-colors duration-200">
+      🌐 Ver en Google Maps
+    </span>
+  </a>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": businessName,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": address,
+        "addressLocality": location,
+        "addressCountry": "Chile"
+      },
+      "telephone": phone,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": latitude,
+        "longitude": longitude
+      }
+    })}
+  </script>
+</section>

@@ -8,6 +8,7 @@ import { homeGalleryImages } from "../data/HomeGalleryImages.ts";
 import { homeImageWithInfoData } from "../data/DataIndexImageWithInfo.ts";
 import { homeTextSections } from "../data/TextSections.ts";
 import "aos/dist/aos.css";
+import Location from "../components/Location.astro";
 ---
 
 <Layout>
@@ -37,8 +38,8 @@ import "aos/dist/aos.css";
             data-aos-easing="ease-in-out"
             data-aos-duration="1000"
             data-aos-anchor-placement="center-bottom"
-            class="px-3  md:px-6 max-w-full mx-auto"
-        >   
+            class="px-3 md:px-6 max-w-full mx-auto"
+        >
             {homeTextSections.map((item) => <TextSection {...item} />)}
         </div>
         <div class="bg-[#fdf1f4]">
@@ -56,6 +57,24 @@ import "aos/dist/aos.css";
                     ))
                 }
             </div>
+        </div>
+        <div
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="center-bottom"
+            class="px-3 md:px-6 max-w-full mx-auto"
+        >
+            <Location
+                location="Puerto Montt"
+                title="¿Dónde encontrarnos?"
+                businessName="Puerto Beauty"
+                address="Pedro Montt 65, Puerto Montt, Chile"
+                phone="+56 9 4512 6327"
+                googleMapsUrl="https://share.google/RmJBpt4uGF8zbgcHX"
+                latitude="-41.4697"
+                longitude="-72.9423"
+            />
         </div>
     </main>
 </Layout>
