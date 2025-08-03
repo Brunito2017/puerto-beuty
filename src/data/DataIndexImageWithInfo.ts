@@ -8,7 +8,7 @@ export const homeImageWithInfoData: ImageWithInfoProps[] = [
     title: "Lifting de Pestañas",
     description: "Realza tu mirada con nuestro servicio de lifting de pestañas. Resultados naturales, duraderos y sin mantenimiento diario.",
     reverse: false,
-    animation: "fade-left",
+    // animation: "fade-left",
     delay: "1000"
   },
   {
@@ -17,7 +17,7 @@ export const homeImageWithInfoData: ImageWithInfoProps[] = [
     title: "Diseño de Cejas",
     description: "Logra unas cejas perfectas con nuestro servicio profesional de diseño y perfilado. Realzamos tu belleza natural con precisión y cuidado.",
     reverse: true,
-    animation: "fade-right",
+    // animation: "fade-right",
     delay: "1000"
   },
   {
@@ -26,7 +26,7 @@ export const homeImageWithInfoData: ImageWithInfoProps[] = [
     title: "Manicura y Uñas",
     description: "Luce unas manos impecables con nuestros servicios de manicura, esmaltado y cuidado de uñas. Calidad, higiene y los mejores productos para ti.",
     reverse: false,
-    animation: "fade-left",
+    // animation: "fade-left",
     delay: "1000"
   }
 ];
