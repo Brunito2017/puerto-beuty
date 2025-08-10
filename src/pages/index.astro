@@ -12,7 +12,7 @@ import Location from "../components/Location.astro";
 ---
 
 <Layout>
-    <!-- <Header /> -->
+    <Header />
     <main>
         <div
             class="pt-20 sm:pt-24 md:pt-28 px-3 sm:px-6 md:px-8 max-w-full md:max-w-6xl mx-auto"
@@ -33,13 +33,7 @@ import Location from "../components/Location.astro";
             </div>
             <TripleGallery data-aos="fade-in" images={homeGalleryImages} />
         </div>
-        <div
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="center-bottom"
-            class="px-3 md:px-6 max-w-full mx-auto"
-        >
+        <div>
             {homeTextSections.map((item) => <TextSection {...item} />)}
         </div>
         <div class="bg-[#fdf1f4]">
@@ -58,13 +52,7 @@ import Location from "../components/Location.astro";
                 }
             </div>
         </div>
-        <div
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-anchor-placement="center-bottom"
-            class="px-3 md:px-6 max-w-full mx-auto"
-        >
+        <div class="px-3 md:px-6 max-w-full mx-auto">
             <Location
                 location="Puerto Montt"
                 title="¿Dónde encontrarnos?"
