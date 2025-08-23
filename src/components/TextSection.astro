@@ -15,7 +15,7 @@ const {
   title,
   subtitle,
   content,
-  align = "left",
+  align = "center",
   size = "md",
   background = "transparent",
   className = "",
@@ -28,51 +28,57 @@ const alignClasses = {
 };
 
 const sizeClasses = {
-  sm: "text-sm md:text-base",
-  md: "text-base md:text-lg",
-  lg: "text-lg md:text-xl",
+  sm: "text-base sm:text-lg",
+  md: "text-lg sm:text-xl",
+  lg: "text-xl sm:text-2xl",
 };
 
 ---
 
-<section
-  class={`my-6 sm:my-8 md:my-10 w-full  ${className}`}
->
-  <div class="max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto px-2 sm:px-4 md:px-6">
-    {
-      title && (
+<section class={`relative py-16 lg:py-20 w-full overflow-hidden ${className}`}>
+  <!-- Decorative background elements -->
+  <div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-pink-100/40 to-rose-100/40 rounded-full blur-2xl pointer-events-none"></div>
+  <div class="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-amber-50/60 to-pink-50/60 rounded-full blur-2xl pointer-events-none"></div>
+  
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    {title && (
+      <div class="mb-8 lg:mb-12 space-y-4">
+        <!-- Decorative line -->
+        {align === "center" && (
+          <div class="w-16 h-1 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mx-auto"></div>
+        )}
+        {align === "left" && (
+          <div class="w-16 h-1 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full"></div>
+        )}
+        {align === "right" && (
+          <div class="w-16 h-1 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full ml-auto"></div>
+        )}
+        
         <h2
-          {...getAosAttrs({
-            duration: 1000,
-          })}
-          class={`text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-2 sm:mb-3 md:mb-4 ${alignClasses[align]} ${background === "dark" ? "text-white" : "text-neutral-900"}`}
+          {...getAosAttrs({ animation: 'fade-up', duration: 1000 })}
+          class={`text-3xl sm:text-4xl lg:text-5xl font-light text-neutral-900 leading-tight ${alignClasses[align]} ${background === "dark" ? "text-white" : "text-neutral-900"}`}
         >
-          {title}
+          <span class="font-extralight text-neutral-600">{title.split(' ')[0]}</span>
+          <span class="block font-semibold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+            {title.split(' ').slice(1).join(' ')}
+          </span>
         </h2>
-      )
-    }
+      </div>
+    )}
 
-    {
-      subtitle && (
-        <h3
-          {...getAosAttrs({
-            duration: 1500,
-          })}
-          class={`text-base sm:text-lg md:text-xl font-light text-neutral-600 mb-3 sm:mb-4 md:mb-5 ${alignClasses[align]} ${background === "dark" ? "text-neutral-300" : "text-neutral-600"}`}
-        >
-          {subtitle}
-        </h3>
-      )
-    }
+    {subtitle && (
+      <h3
+        {...getAosAttrs({ animation: 'fade-up', duration: 1200 })}
+        class={`text-xl sm:text-2xl lg:text-3xl font-light mb-8 lg:mb-10 ${alignClasses[align]} ${background === "dark" ? "text-neutral-300" : "text-pink-700"}`}
+      >
+        {subtitle}
+      </h3>
+    )}
 
-    <div
-      class={`prose prose-sm sm:prose-base max-w-none ${alignClasses[align]} ${sizeClasses[size]} ${background === "dark" ? "prose-invert" : ""}`}
-    >
+    <div class={`prose prose-lg max-w-none ${alignClasses[align]} ${background === "dark" ? "prose-invert" : ""}`}>
       <p
-        {...getAosAttrs({
-          duration: 1800,
-        })}
-        class={`leading-relaxed ${background === "dark" ? "text-neutral-200" : "text-neutral-700"}`}
+        {...getAosAttrs({ animation: 'fade-up', duration: 1400 })}
+        class={`${sizeClasses[size]} leading-relaxed font-light max-w-prose ${align === "center" ? "mx-auto" : ""} ${background === "dark" ? "text-neutral-200" : "text-neutral-600"}`}
       >
         {content}
       </p>
