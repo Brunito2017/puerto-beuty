@@ -1,6 +1,4 @@
 ---
-
-
 import type { Image } from '../types/index.ts';
 
 export interface Props {
@@ -10,22 +8,65 @@ export interface Props {
 const { images } = Astro.props;
 ---
 
-<div class="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6 px-2 sm:px-4 md:px-8 max-w-full md:max-w-screen-lg mx-auto">
-    {images.map((image) => (
-        <div class="mb-4 sm:mb-6 md:mb-8 relative group overflow-hidden rounded-xl shadow-lg shadow-rose-100/50 border border-rose-50/50 flex flex-col items-center">
-            <div class="w-full max-w-[100px] sm:max-w-sm md:max-w-[260px] aspect-[9/16] mx-auto">
-                <img
-                    src={image.src}
-                    alt={image.alt}
-                    class="w-full h-full object-cover transition-all duration-300 group-hover:blur-sm group-hover:scale-110 rounded-xl"
-                />
+<div class="relative py-8 lg:py-12">
+  <!-- Decorative background elements -->
+  <div class="absolute top-0 right-20 w-32 h-32 bg-gradient-to-br from-pink-100/30 to-rose-100/30 rounded-full blur-2xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-20 w-24 h-24 bg-gradient-to-tr from-amber-50/40 to-pink-50/40 rounded-full blur-2xl pointer-events-none"></div>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 px-6 lg:px-8 max-w-6xl mx-auto">
+    {images.map((image, index) => (
+      <div class="relative group">
+        <!-- Decorative background for each card -->
+        <div class="absolute -inset-3 bg-gradient-to-r from-pink-100 via-rose-50 to-amber-50 rounded-3xl opacity-40 group-hover:opacity-60 transition-all duration-500 blur-sm"></div>
+        <div class="absolute -inset-1 bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-xl shadow-pink-200/20"></div>
+        
+        <!-- Main card container -->
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl shadow-neutral-900/10 group-hover:shadow-neutral-900/20 transition-all duration-700 bg-white">
+          <!-- Image container with enhanced aspect ratio -->
+          <div class="relative w-full aspect-[3/4] overflow-hidden">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+            />
+            
+            <!-- Elegant gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700"></div>
+            
+            <!-- Subtle shine effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+            
+            <!-- Content overlay -->
+            <div class="absolute inset-0 flex items-end justify-center p-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
+              <div class="text-center text-white transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500">
+                <h3 class="text-xl sm:text-2xl font-light mb-2 leading-tight">
+                  <span class="font-extralight">{image.title.split(' ')[0]}</span>
+                  <span class="block font-semibold">
+                    {image.title.split(' ').slice(1).join(' ')}
+                  </span>
+                </h3>
+                
+                <p class="text-sm font-light text-white/90 leading-relaxed">
+                  {image.description}
+                </p>
+                
+                <!-- Decorative element -->
+                <div class="w-12 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mt-3"></div>
+              </div>
             </div>
-            <div class="absolute inset-0 bg-rose-100/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="text-center text-zinc-700 px-2 sm:px-4">
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">{image.title}</h3>
-                </div>
-            </div>
+          </div>
+          
+          <!-- Bottom card section with better styling -->
+          {/* <div class="p-4 lg:p-6 bg-gradient-to-br from-white to-pink-50/30">
+            <h4 class="text-lg sm:text-xl font-medium text-neutral-800 mb-1 group-hover:text-pink-700 transition-colors duration-300">
+              {image.title}
+            </h4>
+            <p class="text-sm text-neutral-600 font-light">
+              {image.description}
+            </p>
+          </div> */}
         </div>
+      </div>
     ))}
-</div>
+  </div>
 </div>
