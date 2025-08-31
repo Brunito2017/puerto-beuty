@@ -36,13 +36,11 @@ const { images } = Astro.props;
             />
           </div>
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent p-4 rounded-b-xl">
-            <h3 class="text-lg font-semibold text-white">{images[0].title}</h3>
-            <p class="text-sm text-white/80">{images[0].description}</p>
           </div>
         </div>
       </div>
 
-      <div class="carousel-pagination bg-base-100 absolute bottom-0 left-0 right-0 z-10 h-24 gap-2 flex justify-center overflow-x-auto pt-2">
+      <div class="carousel-pagination bg-base-100 absolute left-0 right-0 z-10 h-24 gap-2 flex justify-center overflow-x-auto pt-2">
         {images.map((img, idx) => (
           <img
             src={img.src}
@@ -55,7 +53,7 @@ const { images } = Astro.props;
         ))}
       </div>
 
-      <!-- Previous Slide -->
+      {/* <!-- Previous Slide -->
       <button type="button" class="carousel-prev left-5 max-sm:left-3 opacity-50 w-10 h-10 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm absolute top-1/2 -translate-y-1/2 z-20">
         <span class="icon-[tabler--chevron-left] w-5 h-5 cursor-pointer"></span>
         <span class="sr-only">Previous</span>
@@ -64,7 +62,7 @@ const { images } = Astro.props;
       <button type="button" class="carousel-next right-5 max-sm:right-3 opacity-50 w-10 h-10 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm absolute top-1/2 -translate-y-1/2 z-20">
         <span class="icon-[tabler--chevron-right] w-5 h-5"></span>
         <span class="sr-only">Next</span>
-      </button>
+      </button> */}
     </div>
   ) : (
     <div class="py-12 text-center text-neutral-500">No hay imágenes para mostrar</div>
