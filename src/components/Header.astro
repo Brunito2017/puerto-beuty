@@ -2,37 +2,37 @@
 // You can add props here if needed later
 ---
 
-<header class="fixed w-full bg-white/80 backdrop-blur-md py-3 sm:py-4 z-10 border-b border-pink-100/30">
+<header class="fixed w-full bg-cream/80 backdrop-blur-md py-3 sm:py-4 z-10 border-b border-baby-pink/30">
   <div class="container mx-auto px-3 sm:px-6 flex justify-between items-center relative min-h-[56px]">
     <!-- Elegant navigation for desktop -->
     <nav class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2">
       <ul class="flex space-x-6 md:space-x-10">
-        <li><a href="/" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Inicio</a></li>
-        <li><a href="/services" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Servicios</a></li>
-        <li><a href="/about" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide">Nosotros</a></li>
-        <li><a href="/contact" class="text-neutral-600 hover:text-pink-700 transition-colors duration-300 font-light tracking-wide relative group">
+        <li><a href="/" class="text-warm-gray hover:text-warm-pink transition-colors duration-300 font-light tracking-wide">Inicio</a></li>
+        <li><a href="/services" class="text-warm-gray hover:text-warm-pink transition-colors duration-300 font-light tracking-wide">Servicios</a></li>
+        <li><a href="/about" class="text-warm-gray hover:text-warm-pink transition-colors duration-300 font-light tracking-wide">Nosotros</a></li>
+        <li><a href="/contact" class="text-warm-gray hover:text-warm-pink transition-colors duration-300 font-light tracking-wide relative group">
           Contacto
-          <span class="absolute -bottom-1 left-0 w-0 h-px bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute -bottom-1 left-0 w-0 h-px bg-warm-pink transition-all duration-300 group-hover:w-full"></span>
         </a></li>
       </ul>
     </nav>
 
     <!-- Centered logo/title -->
     <div class="flex-1 flex justify-center items-center">
-      <a href="/" class="font-serif text-xl sm:text-2xl tracking-wide text-pink-900">
+      <a href="/" class="font-serif text-xl sm:text-2xl tracking-wide text-warm-pink">
         <span class="font-light">Puerto</span><span class="font-medium">Beauty</span>
       </a>
     </div>
 
     <!-- Book appointment button -->
     <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
-      <a href="/book" class="px-4 py-2 border border-pink-200 text-pink-700 bg-white hover:bg-pink-50 rounded-full text-xs sm:text-sm font-light transition-all duration-300 hover:scale-110 hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-200 animate-pulse">
+      <a href="/book" class="px-4 py-2 border border-baby-pink text-warm-pink bg-white hover:bg-baby-pink/10 rounded-full text-xs sm:text-sm font-light transition-all duration-300 hover:scale-110 hover:shadow-baby-pink/20 focus:outline-none focus:ring-2 focus:ring-baby-pink animate-pulse">
         Reservar Cita
       </a>
     </div>
 
     <!-- Refined mobile menu button -->
-    <button class="md:hidden text-pink-800 absolute right-2 top-1/2 -translate-y-1/2" aria-label="Menu">
+    <button class="md:hidden text-warm-pink absolute right-2 top-1/2 -translate-y-1/2" aria-label="Menu">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 sm:w-6 sm:h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
@@ -40,13 +40,13 @@
   </div>
   
   <!-- Mobile menu (hidden by default) -->
-  <div class="mobile-menu hidden bg-white/95 absolute w-full left-0 border-b border-pink-100/30" id="mobile-menu">
+  <div class="mobile-menu hidden bg-cream/95 absolute w-full left-0 border-b border-baby-pink/30" id="mobile-menu">
     <div class="container mx-auto px-3 sm:px-6 py-3 sm:py-4">
       <ul class="space-y-3 sm:space-y-4">
-        <li><a href="/" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Inicio</a></li>
-        <li><a href="/services" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Servicios</a></li>
-        <li><a href="/about" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Nosotros</a></li>
-        <li><a href="/contact" class="block py-2 text-neutral-600 hover:text-pink-700 transition-colors">Contacto</a></li>
+        <li><a href="/" class="block py-2 text-warm-gray hover:text-warm-pink transition-colors">Inicio</a></li>
+        <li><a href="/services" class="block py-2 text-warm-gray hover:text-warm-pink transition-colors">Servicios</a></li>
+        <li><a href="/about" class="block py-2 text-warm-gray hover:text-warm-pink transition-colors">Nosotros</a></li>
+        <li><a href="/contact" class="block py-2 text-warm-gray hover:text-warm-pink transition-colors">Contacto</a></li>
         <li class="pt-1 sm:pt-2">
           <a href="/book" class="block text-center py-2 sm:py-3 bg-pink-50 text-pink-700 rounded-full text-xs sm:text-sm font-light">
             Reservar Cita

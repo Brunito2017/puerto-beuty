@@ -1,1 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&family=Questrial&family=Petit+Formal+Script&display=swap');
 @import "tailwindcss";
+
+@theme {
+  /* K-Beauty Color System */
+  --color-cream: #FFF9F5;
+  --color-baby-pink: #F4C2C2;
+  --color-warm-pink: #E8A2A2;
+  --color-peach: #FFDAB9;
+  --color-soft-green: #D4E4BC;
+  --color-warm-gray: #5A5A5A;
+
+  /* Font Families */
+  --font-sans: "Questrial", sans-serif;
+  --font-serif: "Ovo", serif;
+  --font-accent: "Petit Formal Script", cursive;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-warm-gray bg-cream;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
