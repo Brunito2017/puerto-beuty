@@ -1,0 +1,29 @@
+
+<section class="m-2 bg-[#FFF9F5] flex items-center relative overflow-hidden">
+  <div class="absolute top-0 left-0 opacity-90 rotate-90">
+    <img src="/elements/hero-wave.svg" alt="" class="w-[15rem] lg:w-40" />
+  </div>
+
+  <div class="absolute bottom-0 right-0 opacity-70 -rotate-90">
+    <img src="/elements/hero-wave.svg" alt="" class="w-[15rem] lg:w-40" />
+  </div>
+
+  <div class="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div class="flex flex-col justify-center">
+        <h1 class="font-serif text-5xl lg:text-6xl text-[#5A5A5A] mb-6 leading-tight font-semibold text-center lg:text-left">
+          TU BELLEZA <br /> EN SU MEJOR VERSIÓN
+        </h1>
+        <p class="font-sans text-base lg:text-xl text-[#5A5A5A] opacity-90 leading-relaxed max-w-md text-center lg:text-left">
+          Somos un salón de belleza en Puerto Montt especializado en uñas, cejas y pestañas. Ofrecemos manicure profesional, diseño de cejas y tratamientos de pestañas con atención personalizada y resultados que se notan desde la primera visita.
+        </p>
+      </div>
+
+      <div class="hidden lg:flex items-center justify-center">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>
+
