@@ -11,3 +11,46 @@
 	font-style: normal;
 }
 
+@keyframes pulse-soft {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+/* Opción 1: Glow suave y aura */
+@keyframes glow-soft {
+	0%, 100% {
+		box-shadow: 0 4px 20px rgba(232, 162, 162, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+	}
+	50% {
+		box-shadow: 0 4px 30px rgba(232, 162, 162, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+	}
+}
+
+.btn-glow-soft {
+	position: relative;
+	background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFB6C1 100%);
+	transition: all 0.4s ease;
+	animation: glow-soft 3s ease-in-out infinite;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-glow-soft:hover {
+	transform: translateY(-3px);
+	animation: glow-soft 2s ease-in-out infinite;
+}
+
+.btn-glow-soft:active {
+	transform: translateY(-1px);
+}
+
+.btn-sparkle {
+	display: inline-block;
+	margin-left: 8px;
+	animation: pulse-soft 2s infinite;
+}
+
